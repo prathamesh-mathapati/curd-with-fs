@@ -1,15 +1,13 @@
 const fs=require('fs')
 
-try{
-    var a=fs.readFileSync('crad.json','utf-8')
-}catch(err){
-    var a=fs.writeFileSync('crad.json',JSON.stringify([]))
+if (a==''){
+    fs.writeFileSync('crad.json',JSON.stringify([]))
 }
 // creat
 function creat(){
 var a=require('prompt-sync')(),dic={}
 var a2=JSON.parse(fs.readFileSync('crad.json','utf-8'))
-dic["name"]=a('enter your name:-'),dic["id"]=a('enter your id:-'),dic["mob"]=a('enter your MO.NO:-')
+dic["id"]=a('enter your id:-'),dic["name"]=a('enter your name:-'),dic["mob"]=a('enter your MO.NO:-')
 a2.push(dic)
 fs.writeFileSync('crad.json',JSON.stringify(a2,null,4))}
 
