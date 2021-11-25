@@ -11,7 +11,7 @@ var a=require('prompt-sync')(),dic={}
 var a2=JSON.parse(fs.readFileSync('crad.json','utf-8'))
 dic["name"]=a('enter your name:-'),dic["id"]=a('enter your id:-'),dic["mob"]=a('enter your MO.NO:-')
 a2.push(dic)
-fs.writeFileSync('crad.json',JSON.stringify(a2))}
+fs.writeFileSync('crad.json',JSON.stringify(a2,null,4))}
 
 //appadet
 function apppade_(){
@@ -24,7 +24,7 @@ function apppade_(){
             dict['name']=name1,dict['id']=i['id'],dict['MO.no']=MO
             read.shift(i)
             read.push(dict)
-            fs.writeFileSync('crad.json',JSON.stringify(read))
+            fs.writeFileSync('crad.json',JSON.stringify(read,null,4))
         }
     }
 }
@@ -37,7 +37,7 @@ function delet(){
     for (i of read){
         if (i['id']===b3){
             read.shift(i)
-            fs.writeFileSync('crad.json',JSON.stringify(read))
+            fs.writeFileSync('crad.json',JSON.stringify(read,null,4))
         }
     }
 }
