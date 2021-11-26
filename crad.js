@@ -1,7 +1,11 @@
 const fs=require('fs')
-
+try{
+const a=fs.readFileSync('crad,json')
 if (a==''){
-    fs.writeFileSync('crad.json',JSON.stringify([]))
+    fs.writeFileSync('crad.json',JSON.stringify([]))}}
+catch(err){
+        const a=fs.writeFileSync('crad.json',JSON.stringify([]))
+
 }
 // creat
 function creat(){
@@ -43,14 +47,12 @@ let s=require('prompt-sync')()
 console.log('1. creat the new file\n2. upadet your data\n3. delete your data\n4. Out of crud opration');
 let option=s('select your option:-')
 if (option==1 || option==2 || option==3){
-    // while(true){
         if (option==1){
             creat()
         }else if (option==2){
             apppade_()
         }else if(option==3){
             delet()
-        // }
 
     }
 }else {
